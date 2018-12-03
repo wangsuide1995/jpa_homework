@@ -20,6 +20,6 @@ public class Author {
     private String phone;
 
     @JoinColumn(name="book_id")
-    @ManyToOne
+    @OneToMany
     private Book book;
 }
