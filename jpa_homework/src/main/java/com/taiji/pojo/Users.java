@@ -28,6 +28,6 @@ public class Users {
     private List<Role> roleList;
 
     @JoinColumn(name="role_id")//关联user表的id字段
-    @ManyToOne
+    @OneToMany
     private Role role;
 }
