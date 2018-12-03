@@ -20,6 +20,6 @@ public class Student {
     private String phone;
 
     @JoinColumn(name="teacher_id")//关联user表的id字段
-    @ManyToOne
+    @OneToMany
     private Teacher teacher;
 }
