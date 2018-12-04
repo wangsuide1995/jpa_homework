@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+ datasource:
+    url: jdbc:mysql://127.0.0.1/taiji_data
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+ jpa:
+    hibernate:
+  #    更新或者创建数据库表
+       ddl-auto: update
+  #    控制台显示sql语句
+    show-sql: true
+
+
