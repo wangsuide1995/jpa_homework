@@ -39,8 +39,7 @@ public class UserController {
     //添加用户方法
     @GetMapping("/adduser")
     public String insert(User user) {
-        System.out.println("-----user-----" + user.toString());
-        User user1 = userRepository.save(user);
+        User user1 = userService.insertuser(user);
         if (user1 != null) {
             return "ok";
         } else {
@@ -83,8 +82,12 @@ public class UserController {
     //利用id来删除用户
     @GetMapping("/delete")
     public String detele(User user) {
-        userRepository.delete(user.getId());
-        return "ok";
+       int num = userService.deleteuser(user);
+       if (num >0 ){
+           return "ok";
+       }else {
+           return "fail";
+       }
     }
 
     //用id来修改用户信息，并对属性进行非空判断，达到自定义更新
